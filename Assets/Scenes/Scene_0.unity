@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 23822389}
+  - component: {fileID: 23822390}
   m_Layer: 0
   m_Name: BulletAnchor
   m_TagString: Untagged
@@ -154,6 +155,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &23822390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23822388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 11d1366f603c2a242acd963e0be578ad,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0a5d9e05-8ee0-4c89-a4fd-edcf7a6e91d1
+    m_ActionName: PlayerShip/MoveDirection[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6622a395-d281-4a21-b069-7f65c2444c31
+    m_ActionName: PlayerShip/Fire[/Mouse/leftButton,/XInputControllerWindows/buttonSouth]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PlayerShip
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &50188014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1664251521892296, guid: 2c350f2ea6d36435b8b50bf6e3c429cb,
@@ -199,7 +239,6 @@ MonoBehaviour:
   playerInput: {fileID: 50188015}
   playerMovement: {fileID: 50188021}
   turret: {fileID: 2057798801}
-  bodyRotateDegree: 15
 --- !u!114 &50188021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,7 +530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1866425118
 MonoBehaviour:
   m_ObjectHideFlags: 0

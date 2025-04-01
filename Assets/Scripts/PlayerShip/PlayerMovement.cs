@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody rb;
+    [SerializeField]
+    Rigidbody rb;
 
     [SerializeField]
     Transform bodyFrame;
 
     public float movementSpeed = 10f;
-
     public float bodyRotateDegree = 15f;
 
-    public void Setup()
+    private void Awake()
     {
         if (rb == null)
             rb = GetComponent<Rigidbody>();
@@ -23,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 nextPos = movementSpeed * Time.fixedDeltaTime * direction;
         rb.MovePosition(rb.position + nextPos);
-        //rb.velocity = nextPos;
     }
 
     public void Tilt(Vector2 direction)

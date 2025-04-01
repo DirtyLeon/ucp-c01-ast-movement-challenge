@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerShip : MonoBehaviour
 {
-    [SerializeField]
-    PlayerInput playerInput;
+    public PlayerInput playerInput;
 
     [SerializeField]
     PlayerMovement playerMovement;
@@ -14,19 +12,14 @@ public class PlayerShip : MonoBehaviour
     [SerializeField]
     ShipTurret turret;
 
-    private void Awake()
-    {
-        playerMovement.Setup();
-    }
-
     private void OnEnable()
     {
-        playerInput.fireInput.action.started += OnFireStarted;
+        playerInput.FireAction += OnFire;
     }
 
     private void OnDisable()
     {
-        playerInput.fireInput.action.started -= OnFireStarted;
+        playerInput.FireAction -= OnFire;
     }
 
     private void FixedUpdate()
@@ -37,8 +30,5 @@ public class PlayerShip : MonoBehaviour
         turret.Aim(playerInput.PointerPosition);
     }
 
-    private void OnFireStarted(InputAction.CallbackContext ctx)
-    {
-        turret.Fire();
-    }
+    public void OnFire() => turret.Fire();
 }
