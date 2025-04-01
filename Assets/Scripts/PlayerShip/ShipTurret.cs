@@ -1,35 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class ShipTurret : MonoBehaviour
 {
     [SerializeField]
-    Transform turretTransform;
+    private Transform turretTransform;
 
     [SerializeField]
-    Transform firePoint;
+    private Transform firePoint;
 
     [SerializeField]
-    Bullet bulletPrefab;
+    private Bullet bulletPrefab;
 
     [SerializeField]
-    float LaunchForce = 100f;
+    private float LaunchForce = 100f;
 
     private Transform bulletAnchor;
 
     private void Awake()
     {
         bulletAnchor = GameObject.Find("BulletAnchor").transform;
-    }
-
-    public void Aim()
-    {
-        var pointerPos = Pointer.current.position.ReadValue();
-        var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(pointerPos.x, pointerPos.y, Camera.main.nearClipPlane));
-
-        turretTransform.LookAt(new Vector3(worldPos.x, worldPos.y, turretTransform.position.z), Vector3.back);
     }
 
     public void Aim(Vector3 target)
