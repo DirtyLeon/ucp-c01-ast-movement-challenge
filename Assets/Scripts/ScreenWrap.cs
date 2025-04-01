@@ -10,13 +10,6 @@ public class ScreenWrap : MonoBehaviour
             rb = GetComponent<Rigidbody>();
     }
 
-    public void Wrap(ScreenWrapBorder border)
-    {
-        Vector3 desiredtPosition = transform.position;
-
-        rb.MovePosition(desiredtPosition);
-    }
-
     public void Reposition(Vector2 min, Vector2 max)
     {
         var currentPosition = transform.position;
